@@ -123,7 +123,7 @@ class lcd_driver:
                 self.write(0x94)
             elif line == 4:
                 self.write(0xD4)
-            for char in string.ljust(20)[:20]:
+            for char in string.ljust(16)[:16]:
                 self.write(ord(char), Rs)
         except Exception as e:
             logging.error(f"LCD display error: {e}")
@@ -181,8 +181,8 @@ def main():
             mem_used_gb = mem.used / (1024 ** 3)
             mem_total_gb = mem.total / (1024 ** 3)
 
-            line_one = f"CPU:{cpu_usage:>3.1f}% T:{cpu_temp:>3.1f}C"[:20]
-            line_two = f"MEM:{mem_used_gb:>3.2f}/{mem_total_gb:>3.2f}GB"[:20]
+            line_one = f"CPU:{cpu_usage:>3.1f}% T:{cpu_temp:>3.1f}C"[:16]
+            line_two = f"MEM:{mem_used_gb:>3.2f}/{mem_total_gb:>3.2f}GB"[:16]
 
             if line_one != prev_line_one or line_two != prev_line_two:
                 lcd.display_string(line_one, 1, clear=True)
