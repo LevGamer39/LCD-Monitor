@@ -37,14 +37,14 @@
 ```bash
 mkdir -p /opt/lcdmonitor/
 cd /opt/lcdmonitor/
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/shutdown_lcd.py" -o shutdown_lcd.py
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/lcd_monitor.py" -o lcd_monitor.py
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/requirements.txt" -o requirements.txt
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/shutdown_lcd.py" -o shutdown_lcd.py
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/lcd_monitor.py" -o lcd_monitor.py
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/requirements.txt" -o requirements.txt
 pip install -r requirements.txt --break-system-packages
 cd /etc/systemd/system/
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/lcd-shutdown.service" -o lcd-shutdown.service
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/lcd-reboot.service" -o lcd-reboot.service
-curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/main/LCD/lcdmonitor.service" -o lcdmonitor.service
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/lcd-shutdown.service" -o lcd-shutdown.service
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/lcd-reboot.service" -o lcd-reboot.service
+curl -sL "https://raw.githubusercontent.com/LevGamer39/LCD-Monitor/refs/heads/main/lcdmonitor.service" -o lcdmonitor.service
 
 systemctl daemon-reload
 ```
